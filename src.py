@@ -29,7 +29,7 @@ class BubbleSort(object):
         self.last_result = array
         return self.array
 
-    def last_result(self) -> MutableSequence[SupportsComparison]:
+    def last_result(self) -> MutableSequence[T]:
         return self.last_result
 
 
