@@ -19,17 +19,17 @@ class BubbleSort(object):
         self.last_result: Optional[MutableSequence[T]] = None
 
     def sort(self: Self, array: MutableSequence[T]) -> MutableSequence[T]:
-        self.array = array
-        self.length = len(array) - 1
+        self.array: MutableSequence[T] = array
+        self.length: int = len(array) - 1
         for x in range(self.length):
             for i in range(self.length):
                 if self.array[i] > self.array[i + 1]:
                     self.array[i + 1], self.array[i] = self.array[i], self.array[i + 1]
             self.length -= 1
-        self.last_result = array
+        self.last_result: MutableSequence[T] = array
         return self.array
 
-    def last_result(self) -> MutableSequence[T]:
+    def last_result(self: Self) -> MutableSequence[T]:
         return self.last_result
 
 
