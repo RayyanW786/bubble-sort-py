@@ -1,4 +1,4 @@
-from typing import Self, TypeVar, Optional, MutableSequence, Protocol
+from typing import TypeVar, Optional, MutableSequence, Protocol
 from abc import abstractmethod
 
 
@@ -12,13 +12,13 @@ class SupportsComparison(Protocol):
 T = TypeVar('T', bound=SupportsComparison)
 
 
-class BubbleSort(object):
-    def __init__(self: Self) -> None:
+class BubbleSort:
+    def __init__(self) -> None:
         self.array: Optional[MutableSequence[T]] = None
         self.length: int = 0
         self.last_result: Optional[MutableSequence[T]] = None
 
-    def sort(self: Self, array: MutableSequence[T]) -> MutableSequence[T]:
+    def sort(self, array: MutableSequence[T]) -> MutableSequence[T]:
         self.array: MutableSequence[T] = array
         self.length: int = len(array) - 1
         for x in range(self.length):
@@ -29,7 +29,7 @@ class BubbleSort(object):
         self.last_result: MutableSequence[T] = array
         return self.array
 
-    def last_result(self: Self) -> MutableSequence[T]:
+    def last_result(self) -> Optional[MutableSequence[T]]:
         return self.last_result
 
 
